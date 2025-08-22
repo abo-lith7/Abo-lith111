@@ -20,6 +20,6 @@ jobs:
         env:
           API_KEY: ${{ secrets.m1By8WhdZhb7nctKA8zFZboyd }}
           API_SECRET: ${{ secrets.3LK5LOwstLvmtNkPgYQaQ7RkVW1DU2Dc22LRwTT4U9iKfSBRX7 }}
-          ACCESS_TOKEN: ${{ secrets.1856324410338422784_6XLcig7lkB3bpmssNQLPnOp1nrnEDF }}
-          ACCESS_SECRET: ${{ secrets.JAi658zW47kd6LzkgtdJ74FRAh40rBJ7Ncw3t29SVAGqY }}
+          ACCESS_TOKEN: ${{ secrets.1856324410338422784-rOnGdFnQySu5BV7n0HqCvccR4NfI6w }}
+          ACCESS_SECRET: ${{ secrets.WwXptoxMO4IIdaucrjePpIPUHxrsZCBf7Zdch85fZzxRA }}
         run: python bot.py
