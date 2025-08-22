@@ -18,8 +18,8 @@ jobs:
         run: pip install tweepy schedule
       - name: Run bot
         env:
-          API_KEY: ${{ secrets.m1By8WhdZhb7nctKA8zFZboyd }}
-          API_SECRET: ${{ secrets.3LK5LOwstLvmtNkPgYQaQ7RkVW1DU2Dc22LRwTT4U9iKfSBRX7 }}
-          ACCESS_TOKEN: ${{ secrets.1856324410338422784-rOnGdFnQySu5BV7n0HqCvccR4NfI6w }}
-          ACCESS_SECRET: ${{ secrets.WwXptoxMO4IIdaucrjePpIPUHxrsZCBf7Zdch85fZzxRA }}
+          API_KEY: ${{ secrets. m1By8WhdZhb7nctKA8zFZboyd }}
+          API_SECRET: ${{ secrets. 3LK5LOwstLvmtNkPgYQaQ7RkVW1DU2Dc22LRwTT4U9iKfSBRX7 }}
+          ACCESS_TOKEN: ${{ secrets. 1856324410338422784-rOnGdFnQySu5BV7n0HqCvccR4NfI6w }}
+          ACCESS_SECRET: ${{ secrets. WwXptoxMO4IIdaucrjePpIPUHxrsZCBf7Zdch85fZzxRA }}
         run: python bot.py
