@@ -3,11 +3,10 @@ import os
 from datetime import datetime
 
 # جلب مفاتيح تويتر من GitHub Secrets
-API_KEY = os.environ['m1By8WhdZhb7nctKA8zFZboyd']
-API_SECRET = os.environ['3LK5LOwstLvmtNkPgYQaQ7RkVW1DU2Dc22LRwTT4U9iKfSBRX7']
-ACCESS_TOKEN = os.environ['1856324410338422784-rOnGdFnQySu5BV7n0HqCvccR4NfI6w']
-ACCESS_SECRET = os.environ['WwXptoxMO4IIdaucrjePpIPUHxrsZCBf7Zdch85fZzxRA']
-
+API_KEY = os.environ['API_KEY']
+API_SECRET = os.environ['API_SECRET']
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+ACCESS_SECRET = os.environ['ACCESS_SECRET']
 # قائمة التغريدات اليومية
 tweets = [
     "✨ منصة أبو ليث لتفسير الأحلام ✨\nللتواصل عبر الواتس: https://wa.me/966507286134",
