@@ -4,10 +4,10 @@ import time
 from datetime import datetime
 import os
 
-API_KEY = "AkrbkxqlFcFU0AaDQnzuOEXQk"
-API_SECRET = "ZGSeVmILr5uLI82ZpJ3DRHqlVXMbQoAnviQqdmhB5Iae7r0c8Z"
-ACCESS_TOKEN = "1856324410338422784-gyCXpcoll8PVmd64VX5NYjoFQc2JM7"
-ACCESS_SECRET = "oPzthwCyztrBonL3udyvM0kqWvt6hMRrfJdACh6R7gvwR"
+API_KEY = "m1By8WhdZhb7nctKA8zFZboyd"
+API_SECRET = "3LK5LOwstLvmtNkPgYQaQ7RkVW1DU2Dc22LRwTT4U9iKfSBRX7"
+ACCESS_TOKEN = "1856324410338422784-rOnGdFnQySu5BV7n0HqCvccR4NfI6w"
+ACCESS_SECRET = "WwXptoxMO4IIdaucrjePpIPUHxrsZCBf7Zdch85fZzxRA"
 
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
