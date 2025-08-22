@@ -9,8 +9,8 @@ API_SECRET = "3LK5LOwstLvmtNkPgYQaQ7RkVW1DU2Dc22LRwTT4U9iKfSBRX7"
 ACCESS_TOKEN = "1856324410338422784-rOnGdFnQySu5BV7n0HqCvccR4NfI6w"
 ACCESS_SECRET = "WwXptoxMO4IIdaucrjePpIPUHxrsZCBf7Zdch85fZzxRA"
 
-auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
-auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+auth = tweepy.OAuthHandler(m1By8WhdZhb7nctKA8zFZboydY, 3LK5LOwstLvmtNkPgYQaQ7RkVW1DU2Dc22LRwTT4U9iKfSBRX7)
+auth.set_access_token(1856324410338422784-rOnGdFnQySu5BV7n0HqCvccR4NfI6, WwXptoxMO4IIdaucrjePpIPUHxrsZCBf7Zdch85fZzxRA)
 api = tweepy.API(auth)
 
 tweets = [
