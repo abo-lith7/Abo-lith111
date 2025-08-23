@@ -1,15 +1,4 @@
 import os
-
-# تحقق من وصول GitHub Secrets
-secrets_list = ["API_KEY", "API_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"]
-
-for secret in secrets_list:
-    value = os.environ.get(secret)
-    if value:
-        print(f"✅ {secret} موجود وتعمل")
-    else:
-        print(f"❌ {secret} غير موجود أو خاطئة")
-import os
 import random
 import tweepy
 
@@ -17,7 +6,7 @@ import tweepy
 API_KEY = os.environ.get("API_KEY")
 API_SECRET = os.environ.get("API_SECRET")
 ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN")
-ACCESS_TOKEN_SECRET = os.environ.get("ACCESS_TOKEN_SECRET")
+ACCESS_TOKEN_SECRET = os.environ.get("ACCESS_SECRET")
 
 # طباعة للتأكد (لن تظهر القيم، فقط True/False)
 print("API_KEY موجود:", bool(API_KEY))
@@ -30,7 +19,7 @@ client = tweepy.Client(
     consumer_key=API_KEY,
     consumer_secret=API_SECRET,
     access_token=ACCESS_TOKEN,
-    access_token_secret=ACCESS_TOKEN_SECRET
+    access_token_secret=ACCESS_SECRET
 )
 
 # قائمة تغريدات
