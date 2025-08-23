@@ -46,13 +46,34 @@ tweets = [
     "🔥 مفسر أحلام متواجد 24/7! 🌙☀️\nتفسير فوري في أي وقت تناسبك\n⚡ مفسر أحلام سريع: https://wa.me/966507286134"
 ]
 
-# اختيار تغريدة عشوائية
-tweet = random.choice(tweets)
+# تحميل سجل المنشورات السابقة
+log_file = "log.txt"
+if os.path.exists(log_file):
+    with open(log_file, "r", encoding="utf-8") as f:
+        posted_tweets = [line.strip() for line in f.readlines()]
+else:
+    posted_tweets = []
+
+# اختيار منشور لم يتم نشره بعد
+available_tweets = [t for t in tweets if t not in posted_tweets]
+
+if not available_tweets:
+    print("✅ تم نشر جميع المنشورات بالفعل. إعادة التدوير.")
+    posted_tweets = []
+    available_tweets = tweets.copy()
+
+tweet = random.choice(available_tweets)
 
 # محاولة النشر
 try:
     response = client.create_tweet(text=tweet)
     print("✅ تم نشر التغريدة:", tweet)
     print("Tweet ID:", response.data["id"])
+    
+    # تحديث سجل المنشورات
+    posted_tweets.append(tweet)
+    with open(log_file, "w", encoding="utf-8") as f:
+        for t in posted_tweets:
+            f.write(t + "\n")
 except Exception as e:
     print("❌ خطأ في النشر:", e)
