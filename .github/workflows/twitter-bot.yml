@@ -2,8 +2,8 @@ name: Run Twitter Bot
 
 on:
   schedule:
-    - cron: '0 */5 * * *'   # كل 5 ساعات بتوقيت UTC
-  workflow_dispatch:         # تشغيل يدوي من GitHub
+    - cron: '0 */5 * * *'   # كل 5 ساعات UTC
+  workflow_dispatch:         # لتشغيل يدوي
 
 jobs:
   run-bot:
@@ -26,5 +26,5 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           API_SECRET: ${{ secrets.API_SECRET }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_SECRET }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         run: python bot.py
