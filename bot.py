@@ -1,16 +1,29 @@
-import tweepy
 import os
-from datetime import datetime
 import random
+import tweepy
 
-# جلب مفاتيح تويتر من GitHub Secrets
-API_KEY = os.environ['API_KEY']
-API_SECRET = os.environ['API_SECRET']
-ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
-ACCESS_SECRET = os.environ['ACCESS_SECRET']
+# قراءة المفاتيح من GitHub Secrets
+API_KEY = os.environ.get("API_KEY")
+API_SECRET = os.environ.get("API_SECRET")
+ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN")
+ACCESS_TOKEN_SECRET = os.environ.get("ACCESS_TOKEN_SECRET")
 
-# قائمة التغريدات الجذابة مع جملة "مفسر أحلام" في كل منشور
-tweets = [
+# طباعة للتأكد (لن تظهر القيم، فقط True/False)
+print("API_KEY موجود:", bool(API_KEY))
+print("API_SECRET موجود:", bool(API_SECRET))
+print("ACCESS_TOKEN موجود:", bool(ACCESS_TOKEN))
+print("ACCESS_TOKEN_SECRET موجود:", bool(ACCESS_TOKEN_SECRET))
+
+# مصادقة V2
+client = tweepy.Client(
+    consumer_key=API_KEY,
+    consumer_secret=API_SECRET,
+    access_token=ACCESS_TOKEN,
+    access_token_secret=ACCESS_TOKEN_SECRET
+)
+
+# قائمة تغريدات
+    tweets = [
     "🔮 مفسر أحلام متخصص! ✨\nالشيخ أبو ليث يفسر أحلامك بدقة وفق الكتاب والسنة 📖\nتواصل عبر الواتساب: https://wa.me/966507286134",
     
     "🌙 حلمت بشيء غريب؟ استشر مفسر أحلام محترف! 🌟\nتفسير شرعي دقيق لجميع الرؤى والأحلام\nراسل مفسر الأحلام الآن: https://wa.me/966507286134",
@@ -36,20 +49,13 @@ tweets = [
     "🔥 مفسر أحلام متواجد 24/7! 🌙☀️\nتفسير فوري في أي وقت تناسبك\n⚡ مفسر أحلام سريع: https://wa.me/966507286134"
 ]
 
-def main():
-    # الاتصال بتويتر
-    auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
-    auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
-    api = tweepy.API(auth)
-    
-    # اختيار تغريدة عشوائية
-    tweet = random.choice(tweets)
-    
-    try:
-        api.update_status(tweet)
-        print(f"✅ تم النشر بنجاح: {tweet}")
-    except Exception as e:
-        print(f"❌ خطأ في النشر: {e}")
 
-if __name__ == "__main__":
-    main()
+# اختيار تغريدة عشوائية
+tweet = random.choice(tweets)
+
+# محاولة النشر
+try:
+    client.create_tweet(text=tweet)
+    print("✅ تم نشر التغريدة:", tweet)
+except Exception as e:
+    print("❌ خطأ في النشر:", e)
