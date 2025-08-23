@@ -1,4 +1,15 @@
 import os
+
+# تحقق من وصول GitHub Secrets
+secrets_list = ["API_KEY", "API_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"]
+
+for secret in secrets_list:
+    value = os.environ.get(secret)
+    if value:
+        print(f"✅ {secret} موجود وتعمل")
+    else:
+        print(f"❌ {secret} غير موجود أو خاطئة")
+import os
 import random
 import tweepy
 
