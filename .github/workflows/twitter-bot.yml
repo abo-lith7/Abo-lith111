@@ -1,9 +1,9 @@
-name: Run Twitter Bot
+name: Run Twitter Bot v2
 
 on:
   schedule:
     - cron: '0 */3 * * *'   # كل 3 ساعات UTC
-  workflow_dispatch:         # لتشغيل يدوي إذا أردت تجربة مباشرة
+  workflow_dispatch:
 
 jobs:
   run-bot:
