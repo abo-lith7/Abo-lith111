@@ -1,9 +1,9 @@
-name: Run Twitter Bot v2
+name: Run Twitter Bot
 
 on:
   schedule:
-    - cron: '0 */3 * * *'   # كل 3 ساعات UTC
-  workflow_dispatch:
+    - cron: "0 */3 * * *"   # كل 3 ساعات UTC
+  workflow_dispatch:        # لتشغيل يدويًا إذا أحببت
 
 jobs:
   run-bot:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
